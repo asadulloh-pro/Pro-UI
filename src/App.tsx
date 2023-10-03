@@ -5,6 +5,7 @@ import Button from './components/ui/button';
 function App() {
   const [loading, setLoading] = useState(false);
   const [loading1, setLoading1] = useState(false);
+  const [loading2, setLoading2] = useState(false);
 
   useEffect(() => {
     if (loading) {
@@ -20,6 +21,13 @@ function App() {
       }, 2000);
     }
   }, [loading1]);
+  useEffect(() => {
+    if (loading2) {
+      setTimeout(() => {
+        setLoading2(false);
+      }, 2000);
+    }
+  }, [loading2]);
   return (
     <div className="App">
       <Button
@@ -34,6 +42,13 @@ function App() {
         onClick={() => setLoading1(!loading1)}
       >
         Default
+      </Button>
+      <Button
+        loading={loading2}
+        onClick={() => setLoading2(!loading2)}
+        typeEl="dashed"
+      >
+        Dashed
       </Button>
     </div>
   );
