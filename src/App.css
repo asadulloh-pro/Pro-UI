@@ -11,4 +11,12 @@
   gap: 24px;
   flex-direction: column;
   min-height: 100vh;
+  position: relative;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  position: absolute;
+  top: 30px;
 }

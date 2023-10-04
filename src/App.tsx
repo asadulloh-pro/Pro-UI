@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import Button from './components/ui/button';
+import Spiner from './components/ui/spiner';
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -14,6 +15,7 @@ function App() {
       }, 2000);
     }
   }, [loading]);
+  
   useEffect(() => {
     if (loading1) {
       setTimeout(() => {
@@ -30,26 +32,38 @@ function App() {
   }, [loading2]);
   return (
     <div className="App">
-      <Button
-        loading={loading}
-        onClick={() => setLoading(!loading)}
-        typeEl="primary"
-      >
-        Primary
-      </Button>
-      <Button
-        loading={loading1}
-        onClick={() => setLoading1(!loading1)}
-      >
-        Default
-      </Button>
-      <Button
-        loading={loading2}
-        onClick={() => setLoading2(!loading2)}
-        typeEl="dashed"
-      >
-        Dashed
-      </Button>
+      <div className="App">
+        <h2 className='title'>Button</h2>
+        <Button
+          loading={loading}
+          onClick={() => setLoading(!loading)}
+          typeEl="primary"
+        >
+          Primary
+        </Button>
+        <Button loading={loading1} onClick={() => setLoading1(!loading1)}>
+          Default
+        </Button>
+        <Button
+          loading={loading2}
+          onClick={() => setLoading2(!loading2)}
+          typeEl="dashed"
+        >
+          Dashed
+        </Button>
+      </div>
+
+      <div className="App">
+        <h2 className='title'>Spiner</h2>
+        <Spiner className="w-[50px] h-[50px]" svgClassName="fill-primary" />
+        <Spiner className="w-[50px] h-[50px]" svgClassName="fill-main" />
+        <div className='p-[10px] bg-primary flex items-center justify-center'>
+          <Spiner
+            className="w-[50px] h-[50px]"
+            svgClassName="fill-primary"
+          />
+        </div>
+      </div>
     </div>
   );
 }
