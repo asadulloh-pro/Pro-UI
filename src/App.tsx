@@ -34,7 +34,7 @@ function App() {
   return (
     <div className="App">
       <div className="App">
-        <h2 className='title'>Button</h2>
+        <h2 className="title">Button</h2>
         <Button
           loading={loading}
           onClick={() => setLoading(!loading)}
@@ -55,20 +55,17 @@ function App() {
       </div>
 
       <div className="App">
-        <h2 className='title'>Spiner</h2>
+        <h2 className="title">Spiner</h2>
         <Spiner className="w-[50px] h-[50px]" svgClassName="fill-primary" />
         <Spiner className="w-[50px] h-[50px]" svgClassName="fill-main" />
-        <div className='p-[10px] bg-primary flex items-center justify-center'>
-          <Spiner
-            className="w-[50px] h-[50px]"
-            svgClassName="fill-primary"
-          />
+        <div className="p-[10px] bg-primary flex items-center justify-center">
+          <Spiner className="w-[50px] h-[50px]" svgClassName="fill-primary" />
         </div>
       </div>
       <div className="App">
-        <h2 className='title'>Toltip</h2>
-        <Tooltip tooltip="Salom">
-          Salom Tooltip
+        <h2 className="title">Toltip</h2>
+        <Tooltip tooltip="Lorem ipsum dolor sit amet consectetur">
+          <Button typeEl="primary">Tooltip button</Button>
         </Tooltip>
       </div>
     </div>
