@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Button from './components/ui/button';
 import Spiner from './components/ui/spiner';
+import Tooltip from './components/ui/tooltip';
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -15,7 +16,7 @@ function App() {
       }, 2000);
     }
   }, [loading]);
-  
+
   useEffect(() => {
     if (loading1) {
       setTimeout(() => {
@@ -63,6 +64,12 @@ function App() {
             svgClassName="fill-primary"
           />
         </div>
+      </div>
+      <div className="App">
+        <h2 className='title'>Toltip</h2>
+        <Tooltip tooltip="Salom">
+          Salom Tooltip
+        </Tooltip>
       </div>
     </div>
   );
